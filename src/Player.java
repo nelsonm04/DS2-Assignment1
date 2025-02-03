@@ -4,7 +4,7 @@ public class Player {
 
     /*
          Player default constructor
-     */
+    */
     public Player() {
         this.name = "";
         this.score = 0;
@@ -46,10 +46,22 @@ public class Player {
     }
 
     /*
-        createsClone method DEEP COPY
+        createsClone method DEEP COPY, calls the copy constructor
    */
     public Player createClone(){
         return new Player(this);
     }
+    /*
+        Equals method
+        returns true if names are equal
+   */
+    @Override
+    public boolean equals(Object ob) {
+        if (this == ob) return true;
+        if (ob == null || getClass() != ob.getClass()) return false;
+        Player player = (Player) ob;
+        return name.equals(player.name);
+    }
+
 
 }
